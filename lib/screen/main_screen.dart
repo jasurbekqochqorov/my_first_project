@@ -3,7 +3,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_first_project/screen/widget/bottom_information.dart';
 import 'package:my_first_project/screen/widget/test_field_widget.dart';
 import 'package:my_first_project/utils/colors/app_colors.dart';
 import 'package:my_first_project/utils/images/app_images.dart';
@@ -20,17 +20,14 @@ class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
-
 class _MainScreenState extends State<MainScreen> {
   bool k=false;
-  bool t=false;
   final _formKey = GlobalKey<FormState>();
   // @override
   // void initState() {
   //   _init();
   //   super.initState();
   // }
-  //
   // Future<void> _init() async {
   //   User? user = FirebaseAuth.instance.currentUser;
   //   Future.microtask(() {
@@ -85,35 +82,7 @@ class _MainScreenState extends State<MainScreen> {
                     color:AppColors.white,fontSize: 13.w
                   ),)),
               SizedBox(height: 13.h,),
-              const Text('OR'),
-              SizedBox(height: 6.h,),
-              const Text('Login with'),
-              SizedBox(height: 19.h,),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 44.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Image.asset(AppImages.google,width: 23.w,height: 23.h,fit: BoxFit.cover,),
-                  Image.asset(AppImages.apple,width: 23.w,height: 23.h,fit: BoxFit.cover),
-                  Image.asset(AppImages.faceBook,width: 23.w,height: 23.h,fit: BoxFit.cover),
-                ],),
-              ),
-              SizedBox(height: 19.h,),
-              RichText(text:TextSpan(
-                text:'Don’t have an account? ',
-                style: AppTextStyle.interRegular.copyWith(
-                  color: AppColors.black,fontSize: 11.w
-                ),
-                children: [
-                  TextSpan(
-                    text: ' Register now',
-                    style: AppTextStyle.interRegular.copyWith(
-                        color: Colors.blue,fontSize: 11.w
-                    ),
-                  )
-                ]
-              ))
+              const InformationWidget()
             ],
           ),
         ),
